@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+	
+
+
+
+<ui:composition template="/WEB-INF/template/padraoAluno.xhtml">
+	<ui:define name="conteudo">
+		<div id="imgTituloDaPagina">
+			<div id="divImagemTituloPagina" class="animated bounceInLeft">
+				<h:graphicImage value="/resources/img/iconeCadastro.png" id="imgTp" />
+			</div>
+		</div>
+		<div id="titulo">
+			<h1>Arquivos</h1>
+		</div>
+
+		<div class="col-xs-12 col-sm-1"></div>
+		<div class="col-xs-12 col-sm-10" id="formulario">
+			<div class="espaco"></div>
+			
+			<div class="col-xs-12 col-sm-12">
+
+				<h:form>
+					<h:dataTable
+					 styleClass="table" value="#{albumMb.getListaImagemUsuario(sessaoMb.nomeUsuarioLogatoId)}"
+						var="user">
+
+						<h:column>
+							<f:facet name="header">Titulo</f:facet>
+							<h:outputText value="#{user.descricao}" styleClass="table1" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Data</f:facet>
+							<h:outputText value="#{user.data}" styleClass="table1">
+								<f:convertDateTime pattern="dd/MM/yyyy" />
+							</h:outputText>
+						</h:column>
+
+
+						<h:column>
+							<f:facet name="header">Arquivo</f:facet>
+							<h:graphicImage styleClass="img-thumbnail"
+								style="height:100px; width: 300px;"
+								name="img/uploads/#{user.nome}" />
+						</h:column>
+						
+						
+						
+					</h:dataTable>
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
