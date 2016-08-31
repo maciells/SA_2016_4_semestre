@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui">
+	  
+	<ui:composition template="/WEB-INF/template/padraoAdmin.xhtml">
+		<ui:define name="conteudo">
+			
+			<p:messages autoUpdate="true"/>
+			
+			<h:form id="formularioAmbiente">
+			
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="form-group">
+							<p:outputLabel for="nome-id" value="Nome"/>
+							<p:inputText id="nome-id" styleClass="form-control"
+								value="#{ambienteMb.ambiente.nome}" required="true"
+								requiredMessage="O nome é obrigatório!"
+								maxlength="100"/>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="form-group">
+							<p:outputLabel for="capacidade-id" value="Capacidade"/>
+							<p:inputText id="capacidade-id" styleClass="form-control"
+								value="#{ambienteMb.ambiente.capacidade}" required="true"
+								requiredMessage="O capacidade é obrigatório!"
+								maxlength="100"/>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="form-group">
+							<p:outputLabel for="tipoAmbiente-id" value="TipoAmbiente"/>
+							<p:inputText id="tipoAmbiente-id" styleClass="form-control"
+								value="#{ambienteMb.ambiente.tipoAmbiente}" required="true"
+								requiredMessage="O tipo ambiente é obrigatório!"
+								maxlength="100"/>
+						</div>
+					</div>
+				</div>
+				
+			
+				<div class="row botoes">
+					<p:commandButton value="Salvar" action="#{ambienteMb.salvar}"
+						styleClass="btn btn-default" update="formularioAmbiente"/>
+				</div>
+			</h:form>
+			
+		</ui:define>
+	</ui:composition>
+	  
+</html>
