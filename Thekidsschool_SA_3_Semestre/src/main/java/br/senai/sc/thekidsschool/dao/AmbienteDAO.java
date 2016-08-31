@@ -22,8 +22,9 @@ public class AmbienteDAO {
 			return em;
 	}
 
-		public void excluir(long idExcluir) {
-			getEM().remove(idExcluir);			
+		public void excluir(long id) {
+			Ambiente ambiente = getEM().getReference(Ambiente.class, id);
+			getEM().remove(ambiente);		
 		}
 
 
