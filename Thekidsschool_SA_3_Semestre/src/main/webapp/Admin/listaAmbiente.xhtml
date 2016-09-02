@@ -29,7 +29,8 @@
 	  			<p:column>
 	  				<p:commandButton action="#{ambienteMb.editar}" 
 	  						icon="ui-icon-pencil" title="Editar">
-	  					<f:setPropertyActionListener value="#{ambiente}" target="#{ambienteMb.ambiente}"/>		
+	  					<f:setPropertyActionListener value="#{ambiente}" 
+	  					target="#{ambienteMb.ambiente}"/>		
 	  				</p:commandButton>
 	  				<p:commandButton action="#{ambienteMb.excluir(ambiente.id)}"
 	  					icon="ui-icon-trash" title="Excluir"
@@ -39,7 +40,5 @@
 	  		</p:dataTable>
 	  		</h:form>
 	  	</ui:define>
-	  
 	  </ui:composition>
-
 </html>

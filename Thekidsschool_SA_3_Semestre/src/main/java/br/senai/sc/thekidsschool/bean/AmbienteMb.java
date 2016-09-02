@@ -5,13 +5,14 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 import br.senai.sc.thekidsschool.model.Ambiente;
 import br.senai.sc.thekidsschool.rn.AmbienteRN;
 
-@ViewScoped
+@SessionScoped
 @ManagedBean
 public class AmbienteMb {
 	private Long editarId;
@@ -40,11 +41,8 @@ public class AmbienteMb {
 		return "";
 	}
 	
-	public void Editar(){
-		if(editarId == null){
-			return;
-		}
-		ambiente = ambienteRN.editar(editarId);
+	public String editar(){
+	return "CadastroAmbiente";
 	}
 	
 	public List<Ambiente> getAmbientes() {

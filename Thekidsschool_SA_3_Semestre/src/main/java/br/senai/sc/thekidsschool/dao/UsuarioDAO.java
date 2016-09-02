@@ -62,6 +62,4 @@ public class UsuarioDAO {
 		query.setParameter("email", email);
 		return (Usuario) query.getSingleResult();
 	}
-	
-	
 }
