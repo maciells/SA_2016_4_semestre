@@ -73,13 +73,13 @@ public class UsuarioMb {
 
 	public String salvar() {
 		usuarioRN.salvar(usuario);
-		if (usuario.getPerfil().equals(Perfil.ADMINISTRADOR)) {
+		if (usuario.getPerfil().equals(Perfil.ROLE_ADMIN)) {
 			listaAdministrador = null;
 			return "/Admin/listaAdministrador";
-			}else if (usuario.getPerfil().equals(Perfil.ALUNO)) {
+			}else if (usuario.getPerfil().equals(Perfil.ROLE_ALUNO)) {
 				listaAluno = null;
 				return "/Admin/listaAluno";
-				}else if (usuario.getPerfil().equals(Perfil.PROFESSOR)) {
+				}else if (usuario.getPerfil().equals(Perfil.ROLE_PROF)) {
 					listaProfessores = null;
 					return "/Admin/listaProfessor";
 				}

@@ -17,13 +17,12 @@ import javax.persistence.TemporalType;
 
 
 @Entity
-
 public class Usuario implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	private Long id;
-	@Enumerated(EnumType.STRING)
-	private Perfil perfil;
+	//@Enumerated(EnumType.STRING)
+	private String perfil;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataInscricao;
 	private String nome;
@@ -59,14 +58,15 @@ public class Usuario implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public Perfil getPerfil() {
+	
+	public String getPerfil() {
 		return perfil;
 	}
 
-	public void setPerfil(Perfil perfil) {
+	public void setPerfil(String perfil) {
 		this.perfil = perfil;
 	}
+
 
 	public Date getDataInscricao() {
 		return dataInscricao;

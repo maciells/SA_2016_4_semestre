@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui">
+	  
+	<ui:composition template="/WEB-INF/template/padraoAdmin.xhtml">
+		<ui:define name="conteudo">
+			
+			<p:messages autoUpdate="true"/>
+			
+			<h:form id="formularioEnvioEmail">
+			
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="form-group">
+							<p:outputLabel for="email-id" value="Para:"/>
+							<p:inputText id="email-id" styleClass="form-control"
+								value="#{envioEmailMb.envioEmail.email}" required="true"
+								requiredMessage="Informe um destinatário!"
+								maxlength="100"/>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="form-group">
+							<p:outputLabel for="assunto-id" value="Assunto"/>
+							<p:inputText id="assunto-id" styleClass="form-control"
+								value="#{envioEmailMb.envioEmail.assunto}" required="true"
+								requiredMessage="Informe o assunto!"
+								maxlength="100"/>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="form-group">
+							<p:outputLabel for="tipoEnvioEmail-id" value="Mensagem"/>
+							<p:inputTextarea id="tipoEnvioEmail-id" styleClass="form-control"
+								value="#{envioEmailMb.envioEmail.mensagem}" required="true"
+								requiredMessage="Digite sua mensagem!"/>
+						</div>
+					</div>
+				</div>
+				<div class="row botoes">
+					<p:commandButton value="Enviar" action="#{envioEmailMb.email}"
+						styleClass="btn btn-default" update="formularioEnvioEmail"/>
+				</div>
+			</h:form>
+			
+		</ui:define>
+	</ui:composition>
+	  
+</html>

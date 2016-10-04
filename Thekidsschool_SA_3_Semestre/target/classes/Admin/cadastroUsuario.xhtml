@@ -42,10 +42,9 @@
 								value="#{usuarioMb.usuario.perfil}" required="true"
 								requiredMessage="Por favor escolha um perfil">
 								<f:selectItem itemLabel="Selecione o perfil" itemValue="" />
-								<f:selectItem itemLabel="Administrador"
-									itemValue="ADMINISTRADOR" />
-								<f:selectItem itemLabel="Professor" itemValue="PROFESSOR" />
-								<f:selectItem itemLabel="Aluno" itemValue="ALUNO" />
+								<f:selectItem itemLabel="Administrador" itemValue="ROLE_ADMIN" />
+								<f:selectItem itemLabel="Professor" itemValue="ROLE_PROF" />
+								<f:selectItem itemLabel="Aluno" itemValue="ADMINISTRADOR" />
 							</h:selectOneMenu>
 						</div>
 					</div>

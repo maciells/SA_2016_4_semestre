@@ -6,7 +6,6 @@ import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 import br.senai.sc.thekidsschool.model.Ambiente;
@@ -31,6 +30,7 @@ public class AmbienteMb {
 		ambiente = null;
 		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Ambiente cadastrada com sucesso!", "");
 		FacesContext.getCurrentInstance().addMessage(null, message);
+		ambiente = new Ambiente();
 		return "";
 	}
 	

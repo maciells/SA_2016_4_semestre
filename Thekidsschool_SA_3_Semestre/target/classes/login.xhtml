@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
 <ui:composition template="/WEB-INF/template/padraoInstitucional.xhtml">
 	<ui:define name="conteudo">
@@ -13,7 +14,6 @@
 				<h:graphicImage name="img/iconeLogin.png" id="imgTp" />
 			</div>
 		</div>
-
 		<div id="titulo">
 			<h1>Login TKS</h1>
 		</div>
@@ -22,42 +22,37 @@
 			<div class="estilo1">
 				<span><h3>Digite seu email e senha para entrar</h3></span>
 			</div>
-			
 		</div>
-
-
 		<div class="col-xs-12 col-sm-5" id="formulario">
-			<h:form>
+			<h:form id="form" prependId="false">
 				<div id="hugoLogin"></div>
 				<h:panelGroup rendered="#{not empty param.msg}">
-				<div>
-					<h:outputText value="#{param.msg}" />
-				</div>
-			</h:panelGroup>
-			<h:messages styleClass="alerta"></h:messages>
+					<div>
+						<h:outputText value="#{param.msg}" />
+					</div>
+				</h:panelGroup>
+				<h:messages styleClass="alerta"></h:messages>
+
 				<div class="formDados1">
 					<div class="form-group">
-						<label for="inputEmail">Email</label>
-						<h:inputText styleClass="form-control" id="inputEmail3"
-							value="#{sessaoMb.emailForm}">
-							<f:passThroughAttribute name="placeholder" value="E-mail" />
-						</h:inputText>
+						<label for="inputPassword">E-mail</label>
+						<p:outputLabel for="username" value="E-mail" />
+						<p:inputText id="username" styleClass="form-control"
+							required="true" requiredMessage="E-mail obrigatório!" />
+
 					</div>
 					<div class="form-group">
 						<label for="inputPassword">Senha</label>
-						<h:inputSecret styleClass="form-control" id="inputPassword3"
-							value="#{sessaoMb.senhaForm}">
-							<f:passThroughAttribute name="placeholder" value="Senha" />
-						</h:inputSecret>
+
+						<p:outputLabel for="password" value="Senha" />
+						<p:password id="password" styleClass="form-control"
+							required="true" requiredMessage="Senha obrigatória!" />
 					</div>
-
-
 					<div class="form-group, formEnviaDados">
 						<div class="col-xs-12 col-sm-2"></div>
 						<div class="col-xs-12 col-sm-5">
-							<h:commandButton styleClass="larguraBotaoSb1 pp" value="Entrar"
-								action="#{sessaoMb.entrar}" />
-								
+							<p:commandButton value="Entrar" ajax="false"
+								action="#{loginManager.login}" />
 						</div>
 						<div class="col-xs-12 col-sm-5">
 							<button type="reset" class="larguraBotaoSb1 pp">Restaurar</button>

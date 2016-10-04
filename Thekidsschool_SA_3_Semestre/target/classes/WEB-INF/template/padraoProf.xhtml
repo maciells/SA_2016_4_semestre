@@ -43,9 +43,8 @@
 						<li><h:link outcome="" value="Usuario" /></li>
 						<li role="separator" class="divider"></li>
 						<li><h:link outcome="/Prof/cadastroPergunta" value="Questões" /></li>
-
 					</ul></li>
-					<li class="active"><h:link outcome="/Prof/listaTurma"
+				<li class="active"><h:link outcome="/Prof/listaTurma"
 						value="Turmas" /></li>
 			</ul>
 			<h:form>
@@ -56,41 +55,24 @@
 						</span> <h:outputText value="#{sessaoMb.nomeUsuarioLogato}" /> <span
 							class="caret"></span></a>
 						<ul class="dropdown-menu pps">
-							<li><h:commandLink action="#{sessaoMb.sair}" value="Sair"
-									styleClass="btn btn-danger pp" /></li>
+							<li><h:commandLink action="#{loginManager.logout}"
+									value="Sair" styleClass="btn btn-danger pp" /></li>
 						</ul></li>
-						
 				</ul>
 			</h:form>
 		</div>
-
 		<div class="col-xs-12 col-sm-1"></div>
 	</div>
-
 	<div class="container" id="conteudoAdm">
 
 		<div class="row row-offcanvas row-offcanvas-right">
-
 			<div class="col-xs-12 col-sm-12">
-				<ui:insert name="conteudo">
-
-
-
-
-
-				</ui:insert>
+				<ui:insert name="conteudo"></ui:insert>
 			</div>
 			<!--/.col-xs-12.col-sm-9-->
-
-
 			<!--/.sidebar-offcanvas-->
 		</div>
 		<!--/row-->
-
-
-
-
-
 	</div>
 	<!--/.container-->
 	<div class="container" id="rodape"></div>

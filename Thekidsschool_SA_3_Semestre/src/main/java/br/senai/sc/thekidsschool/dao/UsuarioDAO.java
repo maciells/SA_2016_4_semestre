@@ -39,21 +39,21 @@ public class UsuarioDAO {
 
 	public List<Usuario> listarProfessores() {
 		Query query = getEM().createQuery("From Usuario u Where u.perfil = :perfil", Usuario.class);
-		query.setParameter("perfil", Perfil.PROFESSOR);
+		query.setParameter("perfil", Perfil.ROLE_PROF.name());
 		
 		return query.getResultList();
 	}
 	
 	public List<Usuario> listarAdministrador() {
 		Query query = getEM().createQuery("From Usuario u Where u.perfil = :perfil", Usuario.class);
-		query.setParameter("perfil", Perfil.ADMINISTRADOR);
+		query.setParameter("perfil", Perfil.ROLE_ADMIN.name());
 		
 		return query.getResultList();
 	}
 
 	public List<Usuario> lisarAluno() {
 		Query query = getEM().createQuery("From Usuario u Where u.perfil = :perfil", Usuario.class);
-		query.setParameter("perfil", Perfil.ALUNO);
+		query.setParameter("perfil", Perfil.ROLE_ALUNO.name());
 		return query.getResultList();
 	}
 	
